@@ -7,7 +7,7 @@ body {
     background-color: #007AFF !important;
 }
 
-.container{
+.container {
     min-height: 100vh;
     background-color: #007AFF !important;
     display: flex;
@@ -15,7 +15,7 @@ body {
     align-items: center;
 }
 
-.question-footer{
+.question-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,10 +23,27 @@ body {
     padding-top: 8px;
 }
 
-.card{
+.card {
     width: 100%;
 }
 
-.quiz-card{
+.quiz-card {
     width: 30rem;
+}
+
+.quizGuesHover:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0, 0.05);
+}
+
+.winBGColor {
+    background-color: #8fffb8;
+}
+
+.loseBGColor {
+    background-color: #ffa8a8;
+}
+
+.whiteText{
+    color: white;
 }
