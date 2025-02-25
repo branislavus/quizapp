@@ -32,33 +32,38 @@
     </nav>
     <div class="container">
         <div class="card quiz-card">
-            <img src="./assets/img/education.jpg" class="card-img-top" alt="pic">
-            <div class="card-body" id="congratulations" style="display: none;">Congratulations!!! You've done it!!!</div>
+            <img id="card-img-top" src="./assets/img/education.jpg" class="card-img-top" alt="pic">
+            <div  id="congratulations-screen" class="card-body" style="display: none;">
+                <div class="text-center card-title">Quiz Ende</div>
+                <div id="congratulations" class="text-center"></div>
+
+            </div>
             <div class="card-body" id="question-body">
                 <h5 id="questionText" class="card-title">Frage</h5>
                 <div class="card mb-2">
                     <div class="card-body quizGuesHover" onclick="getAnswer('answer_1')">
-                        <p id="answer_1" class="card-text " >Some quick answer</p>
+                        <p id="answer_1" class="card-text ">Some quick answer</p>
                     </div>
                 </div>
                 <div class="card mb-2">
                     <div class="card-body quizGuesHover" onclick="getAnswer('answer_2')">
-                        <p id="answer_2" class="card-text " >Some quick answer</p>
+                        <p id="answer_2" class="card-text ">Some quick answer</p>
                     </div>
                 </div>
                 <div class="card mb-2">
                     <div class="card-body quizGuesHover" onclick="getAnswer('answer_3')">
-                        <p id="answer_3" class="card-text " >Some quick answer</p>
+                        <p id="answer_3" class="card-text ">Some quick answer</p>
                     </div>
                 </div>
                 <div class="card mb-2">
                     <div class="card-body quizGuesHover" onclick="getAnswer('answer_4')">
-                        <p id="answer_4" class="card-text " >Some quick answer</p>
+                        <p id="answer_4" class="card-text ">Some quick answer</p>
                     </div>
                 </div>
                 <div class="question-footer">
                     <span><b id="nextQuestionCount">1</b> von <b id="allQuestionsNumber">5</b> Fragen</span>
-                    <button id="buttonNext" href="#" class="btn btn-primary" disabled onclick="getNextQuestion()">Go somewhere</button>
+                    <button id="buttonNext" href="#" class="btn btn-primary" disabled onclick="getNextQuestion()">Go
+                        somewhere</button>
                 </div>
 
             </div>

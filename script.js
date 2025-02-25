@@ -90,9 +90,11 @@ function init() {
 
 function showCurrentQuestion() {
     if(currentQuestion >= questions.length){
-        document.getElementById('congratulations').style = '';
+        document.getElementById('congratulations-screen').style = '';
         document.getElementById('question-body').style = 'display: none';
-        document.getElementById('congratulations').innerHTML = `Congratulations!!! You've done ${rightAnswer} of ${questions.length} right!!!`
+        document.getElementById('card-img-top').src = './assets/img/eiscream.jpg';
+        document.getElementById('congratulations').innerHTML = `Gratulation!!! Du hast  ${rightAnswer} von ${questions.length} richtig beantwortet!!!<br>
+        Du verdienst ein Eisbecher wie dieser, holl's dir!!!`
     }else{
         let question = questions[currentQuestion].question;
         document.getElementById('questionText').innerHTML = question;
