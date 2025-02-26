@@ -82,6 +82,8 @@ let questions = [
 ];
 let currentQuestion = 0;
 let rightAnswer = 0;
+let AUDIO_SUCCESS = new Audio('assets/audio/success.mp3');
+let AUDIO_FAIL = new Audio('assets/audio/fail.mp3');
 
 function init() {
     document.getElementById('allQuestionsNumber').innerHTML = questions.length;
@@ -89,7 +91,7 @@ function init() {
 }
 
 function showCurrentQuestion() {
-    let percent = currentQuestion / questions.length * 100;
+    let percent = (currentQuestion +1)/ questions.length * 100;
     document.getElementById('progress-bar').innerHTML = `${percent}%`;   
     document.getElementById('progress-bar').style = `width: ${percent}%`;   
 
@@ -97,7 +99,7 @@ function showCurrentQuestion() {
         document.getElementById('congratulations-screen').style = '';
         document.getElementById('question-body').style = 'display: none';
         document.getElementById('card-img-top').src = './assets/img/eiscream.jpg';
-        document.getElementById('congratulations').innerHTML = `Gratulation!!! Du hast  ${rightAnswer} von ${questions.length} richtig beantwortet!!!<br>
+        document.getElementById('congratulations').innerHTML = `Gratulation!!! Du hast  <b>${rightAnswer}</b> von <b>${questions.length}</b> richtig beantwortet!!!<br>
         Du verdienst ein Eisbecher wie dieser, holl's dir!!!`
     }else{
         let question = questions[currentQuestion].question;
@@ -116,10 +118,12 @@ function getAnswer(gues) {
         document.getElementById(gues).parentNode.parentNode.classList.add('bg-success');
         document.getElementById(gues).classList.add('whiteText');
         rightAnswer++;
+        AUDIO_SUCCESS.play();
     } else {
         document.getElementById(gues).parentNode.parentNode.classList.add('bg-danger');
         document.getElementById(showRightAnswer).parentNode.parentNode.classList.add('bg-success');
         document.getElementById(gues).classList.add('whiteText');
+        AUDIO_FAIL.play();
     }
     document.getElementById('buttonNext').disabled = false;
 }
@@ -145,4 +149,12 @@ function resetAnswersApearance(){
     document.getElementById('answer_4').parentNode.parentNode.classList.remove('bg-success');
     document.getElementById('answer_4').parentNode.parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').classList.remove('whiteText');
+}
+
+function erneutSpielen(){
+    document.getElementById('card-img-top').src = './assets/img/education.jpg';
+    currentQuestion = 0;
+    rightAnswer = 0;
+    document.getElementById('congratulations-screen').style = 'display: none';
+    document.getElementById('question-body').style = '';
 }
