@@ -89,6 +89,10 @@ function init() {
 }
 
 function showCurrentQuestion() {
+    let percent = currentQuestion / questions.length * 100;
+    document.getElementById('progress-bar').innerHTML = `${percent}%`;   
+    document.getElementById('progress-bar').style = `width: ${percent}%`;   
+
     if(currentQuestion >= questions.length){
         document.getElementById('congratulations-screen').style = '';
         document.getElementById('question-body').style = 'display: none';
